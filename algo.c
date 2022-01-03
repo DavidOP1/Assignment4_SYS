@@ -161,6 +161,7 @@ for(int a=0;a<k;a++){
      check=k;
    }
 }
+free(num);
 //printf("Best route= %d",best);
 if (best>=INT_MAX) return -1;
 return best;
@@ -329,7 +330,7 @@ void A(char* graph){ //Sending the string after every n occures, it always a num
 //Aribtrary choice, but in reality it will the first char in the given string.
 //Every time we enter A command start completely from scratch delete the whole graph.
 //print(headNode);
-if (nodeCount()>0) deleteGraph(&headNode); 
+if (nodeCount()>0) deleteGraph(); 
 char *num;
 num=(char*)malloc(strlen(graph));
 num[0]='\0';
@@ -477,14 +478,15 @@ free(num);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void deleteGraph(nodes **head){
+void deleteGraph(){
+nodes** head=&headNode;
 nodes* prev = *head;
 edges *edgesEd;
     while (*head)
     {
         *head = (*head)->next;
         edgesEd=prev->headEdge;
-        deleteEdges(&edgesEd);
+         deleteEdges(&edgesEd);
          //printf("\n CURRENT ID= %d\n",prev->id);
         free(prev);
         //printE(edgesEd);
@@ -553,7 +555,7 @@ void deleteEdgesD(edges **head, int id){
 void print(nodes *head) {
     nodes *current_node = head;
    	while ( current_node != NULL) {
-        printf("id= %d ", current_node->id);
+      //  printf("id= %d ", current_node->id);
         current_node = current_node->next;
     }
 }
