@@ -45,12 +45,12 @@ int main(){
             case 83:
                 /* code */
                 //printf("command= %s, commandTemp= %d\n",command,commandTemp);
-               printf("Dijsktra shortest path: %d\n",S(command,0,0,0));
+               printf("Dijsktra shortest path: %d \n",S(command,0,0,0));
                 break;
             case 84:
                 /* code */
                 //printf("command= %s, commandTemp= %d\n",command,commandTemp);
-                printf("TSP shortest path: %d\n",T(command));
+                printf("TSP shortest path: %d \n",T(command));
                 break;
             default:
                 break;
