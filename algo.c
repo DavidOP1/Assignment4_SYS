@@ -480,12 +480,12 @@ free(num);
 void deleteGraph(){
 nodes** head=&headNode;
 nodes* prev = *head;
-edges *edgesEd;
+//edges *edgesEd;
     while (*head)
     {
         *head = (*head)->next;
-        edgesEd=prev->headEdge;
-        deleteEdges(&edgesEd);
+        //edgesEd=prev->headEdge;
+       // deleteEdges(&edgesEd);
          //printf("\n CURRENT ID= %d\n",prev->id);
         free(prev);
         //printE(edgesEd);
