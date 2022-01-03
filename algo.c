@@ -161,7 +161,6 @@ for(int a=0;a<k;a++){
      check=k;
    }
 }
-free(num);
 //printf("Best route= %d",best);
 if (best>=INT_MAX) return -1;
 return best;
@@ -486,7 +485,7 @@ edges *edgesEd;
     {
         *head = (*head)->next;
         edgesEd=prev->headEdge;
-         deleteEdges(&edgesEd);
+        deleteEdges(&edgesEd);
          //printf("\n CURRENT ID= %d\n",prev->id);
         free(prev);
         //printE(edgesEd);
